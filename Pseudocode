@@ -1,0 +1,65 @@
+# Possible Code ideas for Event List (Daily, Monthly, Annual) ToDo
+
+# Event MODEL
+# Also possible to extend functionality of Appointment MODEL
+rails g model Event item:string event_time:datetime
+rails db:migrate # Extending appointment model functionality as above means extending its schema
+
+# Events CONTROLLER
+rails g controller Events
+
+# List all Events
+app/controllers/events_controller.rb
+def index
+  @events = Event.all
+end
+
+# Events View
+app/views/events/index.html.erb
+<h1>nf-pc11</h1>
+
+# Form for Events
+<h2>Events</h2>
+<h3>Enter new event</h3>
+<%= form_for @event do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit 'Enter Event' %>
+  <% @events.each do |a| %>
+    <h3>
+      <%= a.title %>
+  # timestamps significant, for time chronology purposes    
+    </h3>
+  <% end %>
+<% end %>
+
+# Update resources with :events
+config/routes.rb
+resources :events
+
+# Add new Events etc
+app/controllers/events_controller.rb
+def index
+  @events = Event.all
+end
+
+def new
+  @event = Event.new
+end
+
+
+
+=======
+
+  # POST request to appointments (or events)
+  def create
+    @appointment = Appointment.create(appointment_params)
+    redirect_to :root
+  end
+  
+  
+  Private
+  def appointment_params
+    params.require(:appointment).permit(:title, :apt_time)
+  end  
+  
+  =======
