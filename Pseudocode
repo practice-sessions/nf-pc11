@@ -50,6 +50,38 @@ end
 
 =======
 
+  
+  <h1>nf-pc11</h1>
+<h2>Appointments or Events Schedule</h2>
+<h3>Make new appointment</h3>
+<%= form_for @appointment do |f| %>
+  <%= f.label :What about? %>
+  <%= f.text_field :title %>
+  <%= f.label :When? %>
+  <%= f.text_field :apt_time %>
+  <%= f.submit 'Make Appointment' %>
+  <% @appointments.each do |a| %>
+    <h3>
+      <%= a.title %>
+    </h3>
+    <p>
+      <%= a.apt_time %>
+    </p>
+  <% end %>
+<% end %>
+  
+<h3>Enter new event</h3>
+<%= form_for @appointment do |f| %>
+  <%= f.label :What? %>
+  <%= f.text_area :comments %>
+  <%= f.submit 'Enter Event' %>
+  <% @appointments.each do |a| %>
+    <h3>
+      <%= a.comments %>
+    </h3>
+     <% end %>
+  <% end %>
+<% end %>
     
   
   =======
