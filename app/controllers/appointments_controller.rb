@@ -5,6 +5,18 @@ class AppointmentsController < ApplicationController
     # define appointment as a new record
     @appointment = Appointment.new
   end
+
+
+# POST request to appointments (or events)
+  def create
+    @appointment = Appointment.create(appointment_params)
+    redirect_to :root
+  end
   
+  
+  private
+  def appointment_params
+    params.require(:appointment).permit(:title, :apt_time)
+  end  
 
 end

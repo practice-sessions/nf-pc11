@@ -50,16 +50,6 @@ end
 
 =======
 
-  # POST request to appointments (or events)
-  def create
-    @appointment = Appointment.create(appointment_params)
-    redirect_to :root
-  end
-  
-  
-  Private
-  def appointment_params
-    params.require(:appointment).permit(:title, :apt_time)
-  end  
+    
   
   =======
