@@ -3,7 +3,13 @@ var Appointments = createReactClass({
   render: function() {
     return (
       <React.Fragment>
-        <h1>nf-pc11</h1>
+        <div>
+          {this.props.appointments.map(function(appointment) {
+            return (
+              <Appointment appointment={appointment} />
+            )
+          })}
+        </div>
       </React.Fragment>
     );
   }

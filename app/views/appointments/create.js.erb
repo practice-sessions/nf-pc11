@@ -1,0 +1,4 @@
+# Handler for response of AJAX request, using the DIV with id= "appointments"
+<plain>
+  $('#appointments').html("#{escape_javascript(render 'appointments')}");
+</plain>

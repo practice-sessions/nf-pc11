@@ -10,7 +10,9 @@ class AppointmentsController < ApplicationController
 # POST request to appointments (or events)
   def create
     @appointment = Appointment.create(appointment_params)
-    redirect_to :root
+    # Send new latest set of appointments in our response from 
+    # the action. No need for the redirect anymore
+    @appointments = Appointment.order('apt_time ASC')
   end
   
   
