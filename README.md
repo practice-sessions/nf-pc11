@@ -1,5 +1,5 @@
 # README
 
-A content management app for a small local shop. Using MERN but React fron end not yet commenced as backend api still being developed. 
+An Event Scheduler and Calendar app using Ruby on Rails and React 
 
-Watch this space for the concluding part, which would make it complete fullstack using React (MERN).
+Watch this space for the concluding part, which would make it complete fullstack using React-Rails.
